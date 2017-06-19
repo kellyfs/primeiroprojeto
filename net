@@ -1,0 +1,62 @@
+public static void main(String[] args) {
+       
+        
+        double[] vetorA = vetor();
+        double[] vetorB = vetor();
+        
+        System.out.println("Popule seu vetor A: ");
+        vetorA = popVetor(vetorA);
+        
+        System.out.println("Popule seu vetor B: ");
+        vetorB = popVetor(vetorB);
+        double calc = calculo(vetorA, vetorB);
+        imprime(calc);
+        
+        
+        
+    }
+    
+    static double[] vetor(){
+        double vetor[] = new double[5];
+        return vetor;
+    }
+    
+    static double[] popVetor(double vetor[]){
+        Scanner input = new Scanner(System.in);
+        for(int i = 0; i<vetor.length; i++){
+            System.out.println("Digite os elementos do vetor: ");
+            vetor[i] = input.nextDouble();
+        }
+        
+        return vetor;
+        
+    }
+    
+    static double calculo(double[] vetorA, double[] vetorB){
+        double resultado;
+        double menorA = vetorA[0];
+        double menorB = vetorB[0];
+        
+        for(int i = 0; i<vetorA.length && i<vetorB.length; i++){
+            if (vetorA[i]<menorA){
+                menorA = vetorA[i];
+            }
+            if (vetorB[i]<menorB){
+                menorB = vetorB[i];
+            }
+        }
+        
+        resultado = menorA/menorB;
+        return resultado;
+        
+    }
+    
+    static void imprime(double resultado){
+        System.out.println("O resultado é: "+resultado);
+    }
+    
+    
+    
+    
+    
+}

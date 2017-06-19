@@ -1,0 +1,39 @@
+ static Scanner leitor = new Scanner (System.in);
+   
+   static int recebeDados(){
+       System.out.println("Informe os valores, linha/coluna: ");
+       int dados = leitor.nextInt();
+       return dados;
+   }
+   static int [][]criaMatriz(int linhas, int colunas){
+       int [][] matriz = new int [linhas][colunas];
+       return matriz;       
+   }
+   static int [][] populaMatriz(int [][] matriz){
+       for (int i = 0; i <matriz.length; i++){
+           for (int j = 0; j < matriz[i].length; j++){
+               System.out.println("Informe o valor dos elementos: ");
+               matriz[i][j] = leitor.nextInt();
+           }
+       }
+       return matriz;
+   }
+   static void verificacao(int [][] matriz, int dado){
+       int cont = 0;
+       for (int i = 0; i <matriz.length; i++){
+           for (int j = 0; j < matriz[i].length; j++){
+           if(matriz[i][j] == dado){
+            cont++;
+              System.out.printf("A matriz [%d][%d] tem o número [%d], quantidade [%d] \n", i, j, matriz[i][j], cont);
+           }
+        }
+       }
+   }
+     public static void main(String[] args) {
+        int linha = recebeDados();
+        int coluna = recebeDados();
+        int dado = recebeDados();
+        int [][] matriz = criaMatriz(linha, coluna);
+        matriz = populaMatriz(matriz);
+         verificacao(matriz, dado);
+    }
